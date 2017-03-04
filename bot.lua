@@ -115,7 +115,7 @@ function vardump(value, depth, key)
   elseif type(value)  == 'function' or
     type(value) == 'thread' or
     type(value) == 'userdata' or
-    value == nil then --@JoveTeam
+    value == nil then --@SCORPION_TG_BOT
     print(spaces .. tostring(value))
   elseif type(value)  == 'string' then
     print(spaces .. linePrefix .. '"' .. tostring(value) .. '",')
@@ -233,12 +233,12 @@ if input:match("^[#!/][Ii][Dd]$") and is_mod(msg) or input:match("^[Ii][Dd]$") a
 
 	
       if input:match("^[#!/][Pp][Ii][Nn]$") and reply_id and is_owner(msg) or input:match("^[Pp][Ii][Nn]$") and reply_id and is_owner(msg) or input:match("^پین$") and reply_id and is_owner(msg) or input:match("^سنجاق$") and reply_id and is_owner(msg) then
-        tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🏅پیام <code>سنجاق</code> شد\n🎗 کانال: @JoveTeam', 1, 'html')
+        tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🏅پیام <code>سنجاق</code> شد\n🎗 کانال: @SCORPION_TG_BOT', 1, 'html')
         tdcli.pinChannelMessage(chat_id, reply_id, 1)
       end
 
       if input:match("^[#!/][Uu][Nn][Pp][Ii][Nn]$") and reply_id and is_owner(msg) or input:match("^[Uu][Nn][Pp][Ii][Nn]$") and reply_id and is_owner(msg) or input:match("^حذف پین$") and reply_id and is_owner(msg) or input:match("^حذف سنجاق$") and reply_id and is_owner(msg) then
-        tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🏅پیام <code>سنجاق</code> حذف شد\n🎗 کانال: @JoveTeam', 1, 'html')
+        tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🏅پیام <code>سنجاق</code> حذف شد\n🎗 کانال: @SCORPION_TG_BOT', 1, 'html')
         tdcli.unpinChannelMessage(chat_id, reply_id, 1)
       end
 
@@ -769,7 +769,7 @@ local res = http.request(database.."joke.db")
       groups = redis:sismember('groups',chat_id)
       if input:match("^[#!/][Mm]ute sticker$") and is_mod(msg) and groups or input:match("^[Mm]ute sticker$") and is_mod(msg) and groups or input:match("^ممنوعیت استیکر$") and is_mod(msg) and groups then
         if redis:get('mute_stickertg:'..chat_id) then
-          tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🔸 #ممنوعیت استیکر _فعال_ است\n🎗 کانال: @JoveTeam', 1, 'md')
+          tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🔸 #ممنوعیت استیکر _فعال_ است\n🎗 کانال: @SCORPION_TG_BOT', 1, 'md')
         else
           redis:set('mute_stickertg:'..chat_id, true)
           tdcli.sendText(chat_id, msg.id_, 0, 1, nil, '🔹 #ممنوعیت استیکر _فعال_ شد\n🎗 کانال: @SCORPION_TG_BOT', 1, 'md')
@@ -1024,7 +1024,7 @@ local res = http.request(database.."joke.db")
         .."🏅 #ممنوعیت فیلم : ".."`"..video.."`".."\n"
         .."🏅 #ممنوعیت فایل : ".."`"..document.."`".."\n"
         .."🏅 #ممنوعیت متن : ".."`"..text1.."`".."\n"
-        .."🏅 کانال: - @JoveTeam"
+        .."🏅 کانال: - @SCORPION_TG_BOT"
         tdcli.sendText(chat_id, msg.id_, 0, 1, nil, text, 1, 'md')
       end
 if input:match("^[#!/][Hh]elp$") and is_mod(msg) or input:match("^[Hh]elp$") and is_mod(msg) or input:match("^راهنما$") and is_mod(msg) then
@@ -1275,7 +1275,7 @@ if redis:get('edittg:'..data.chat_id_) then
 end 
   elseif (data.ID == "UpdateOption" and data.name_ == "my_id") then
 	
-    -- @JoveTeam
+    -- @SCORPION_TG_BOT
     tdcli_function ({
       ID="GetChats",
       offset_order_="9223372036854775807",
